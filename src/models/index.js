@@ -47,5 +47,8 @@ const dbAssociations = function dbAssociations(){
             name: 'author_book_id'
         }
     });
+    Category.belongsToMany(Book, {through:'bookhascategory'});
+    Book.belongsToMany(Category, {through:'bookhascategory'});
+
 }
 module.exports = dbAssociations
